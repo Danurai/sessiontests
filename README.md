@@ -1,25 +1,30 @@
 # SessionTests
 
-clojure and clojurescript http-kit server with chord websocket reagent dynamic page updates and a simple navbar
+Clojure and Clojurescript http-kit server using Chord async websocket and Reagent for dynamic page updates
+Project also includes a simple navbar and tabbed page using bootstrap
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+Template for building interactive web pages with Clojure and Clojurescript
 
 ## Setup
 
-To get an interactive development environment run:
+To get an interactive development environment open a repl, start the http-kit server and start figwheel, helpers are included in the user namespace:
 
-    lein figwheel
+    C:\sessiontests>lein repl
+    ...
+    sessiontests.system=> (ns user)
+    nil
+    user=> (reset)
+    :reloading (sessiontests.gameloop sessiontests.web sessiontests.system user)
+    Server started on http://localhost:9009
+    :resumed
+    user=> (fig-start)
 
-and open your browser at [localhost:3449](http://localhost:3449/).
+and open your browser at [localhost:9009](http://localhost:9009/).
 This will auto compile and send all changes to the browser without the
 need to reload. After the compilation process is complete, you will
-get a Browser Connected REPL. An easy way to try it is:
-
-    (js/alert "Am I connected?")
-
-and you should see an alert in the browser window.
+get a Browser Connected REPL.
 
 To clean all compiled files:
 
@@ -27,13 +32,13 @@ To clean all compiled files:
 
 To create a production build run:
 
-    lein do clean, cljsbuild once min
+    lein uberjar
+    
+Then start the application
+    java -jar target\session-standalone.jar
 
-And open your browser in `resources/public/index.html`. You will not
-get live reloading, nor a REPL. 
+And open your browser at [localhost:9009](http://localhost:9009/). You will not get live reloading, nor a REPL. 
 
 ## License
-
-Copyright © 2014 FIXME
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
