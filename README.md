@@ -35,6 +35,7 @@ To create a production build run:
     lein uberjar
     
 Then start the application
+
     java -jar target\session-standalone.jar
 
 And open your browser at [localhost:9009](http://localhost:9009/). You will not get live reloading, nor a REPL. 
