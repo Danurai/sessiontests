@@ -55,7 +55,7 @@
   ;; Setting up nREPL for Figwheel and ClojureScript dev
   ;; Please see:
   ;; https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-within-NRepl
-  :profiles {:uberjar {:aot [sessiontests.system]
+  :profiles {:uberjar {:aot :all
                      :source-paths ["src"]
                      :prep-tasks ["compile" ["cljsbuild" "once" "min"]]}
             :dev {:dependencies [[reloaded.repl "0.2.4"]
